@@ -1,0 +1,28 @@
+<div class="container">
+	<h3>SignUp Form</h3>
+	<div>
+		<p ng-repeat="error in errors" class="danger">{{error}}</p>
+	</div>
+	<table class="table">
+	<tr>
+		<td>Email:</td>
+		<td><input type="text" ng-model="newUser.email" /></td>
+	</tr>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" ng-model="newUser.name" /></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><input type="password" ng-model="newUser.password" /></td>
+	</tr>
+	<tr>
+		<td>Retype Password:</td>
+		<td><input type="password" ng-model="newUser.password_confirmation" /></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><button ng-click="submit()">SignUp</button></td>
+	</tr>
+</table>
+</div>

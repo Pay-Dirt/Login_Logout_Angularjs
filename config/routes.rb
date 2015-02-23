@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  
   get 'users/new'
+  resources :users
+  get 'templates/home', to: 'templates#home'
+  get 'templates/sign_up', to: 'templates#sign_up'
+  root 'templates#start'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
