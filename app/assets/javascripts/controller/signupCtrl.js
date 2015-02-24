@@ -7,5 +7,6 @@ loginApp.controller('signupCtrl',['$scope','User',function($scope,User){
 			if(data.email==$scope.newUser.email){}
 			else{$scope.errors = data;}
 		});
-	};
+		
+	
 }]);

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+
   get 'users/new'
   resources :users
+  resources :sessions, only: [:create,:destroy]
   get 'templates/home', to: 'templates#home'
   get 'templates/sign_up', to: 'templates#sign_up'
+  get 'templates/login', to: 'templates#login'
   root 'templates#start'
 
   # The priority is based upon order of creation: first created -> highest priority.

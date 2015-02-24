@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
-    render json: @user
+    @user = current_user
+    render json: {success: {success:"yes"},user: @user}
   end
   
   def create
