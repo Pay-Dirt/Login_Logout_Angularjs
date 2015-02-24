@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: session_params[:email].downcase)
     if user && user.authenticate(session_params[:password])
       log_in user
-      render json: user
+      render json: {success: {success: "yes",type: "notice",message: "You have logged in successfully."},user: user}
     else
       render json: ["Invalid Username or password"]
       #will use for later rendering of json
@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
+    session[:user_id] = nil
+    render json: {}
   end
   
   private

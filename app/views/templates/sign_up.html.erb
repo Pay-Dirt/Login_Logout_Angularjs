@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-show="!isSignedUp">
 	<h3>SignUp Form</h3>
 	<div>
 		<p ng-repeat="error in errors" class="danger">{{error}}</p>
@@ -25,4 +25,7 @@
 		<td><button ng-click="submit()">SignUp</button></td>
 	</tr>
 </table>
+</div>
+<div ng-show="isSignedUp">
+	Successfully Signed Up<br /><a href="/#login">Login</a>
 </div>

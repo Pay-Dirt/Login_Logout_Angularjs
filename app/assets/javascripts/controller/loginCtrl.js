@@ -1,8 +1,13 @@
 var loginApp = angular.module('loginApp');
 loginApp.controller('loginCtrl',['$scope','Login','$location',function($scope,Login,$location){
+	$scope.loggedIn = false;
 	$scope.submit = function(){
 		Login.create({},$scope.session,function(data){
-			if(data.email == $scope.session.email){console.log("Login Successful");}
+			if(data.success.success == "yes"){
+				console.log("Login Successful");
+				$scope.loggedIn = true;
+				$scope.notice = data.success.message;
+			}
 			else{session={};console.log("Login Failed!");}
 		},function(error){console.log("Request Failed!");});
 	};
