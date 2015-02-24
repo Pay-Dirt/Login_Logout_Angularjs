@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       log_in user
       render json: {success: {success: "yes",type: "notice",message: "You have logged in successfully."},user: user}
     else
-      render json: ["Invalid Username or password"]
+      render json: {success: {success: "no"}}
       #will use for later rendering of json
       #render json: ["Invalid Username or password",user:user]
     end

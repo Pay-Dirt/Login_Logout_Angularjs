@@ -8,7 +8,7 @@ loginApp.controller('loginCtrl',['$scope','Login','$location',function($scope,Lo
 				$scope.loggedIn = true;
 				$scope.notice = data.success.message;
 			}
-			else{session={};console.log("Login Failed!");}
+			else{session={};console.log("Login Failed!");alert("Login Failed!");$scope.session = {};}
 		},function(error){console.log("Request Failed!");});
 	};
 }]);
